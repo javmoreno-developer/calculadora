@@ -5,7 +5,15 @@ var n2=0;
 var resultado=0;
 var arrayAux=[];
 
-
+//dividir un numero float en cachos
+function divFloat(n) {
+	let porDetras = (n + "").split(".")[1].length;
+	let porDelante=0;
+	let aux=parseInt(n);
+	porDelante=aux.toString().length;
+	let total=porDetras+porDelante+1;
+	return total;
+}
 function pantalla(a) {
 	textito.innerText+=a;
 	datos.push(a);
@@ -29,7 +37,7 @@ function borradoParcial() {
 //capturar operador (main function)
 function operador(datos) {
 	let res="";
-	let numeros=["+","-","*","/","<=","%","!","mod","1/","√"];
+	let numeros=["+","-","*","/","<=","%","!","mod","1/","√","^","E","tan","cos","sin","log"];
 	let aux=true;
 	let contador=0;//esto es para multiples operaciones
 	let pos=datos.length;
@@ -59,12 +67,18 @@ function asignacion() {
 	n1=0;
 	n2=0;
 	let isString=false;
+	let isfalso=false;//negativo
 	let pos=operador(datos);
 
 	//n1
 	for(let i=0;i<pos;i++) {
 		n1+=datos[i];
 		console.log("n1: "+n1);
+
+		if(datos[0]=="-") {
+			isfalso=true;
+			console.log("isfalso: "+isfalso);
+		}
 		//flotantes
 		if(datos[i]==".") {
 			esFloat=true;
@@ -77,7 +91,7 @@ function asignacion() {
 			isString=false;
 		} 
 		//10+
-		if(typeof(n1)==="string") {
+		if(typeof(n1)==="string" && n1!="-") {
 
 			isString=true;
 		}
@@ -100,15 +114,32 @@ function asignacion() {
 	}
 	
 	n1=parseFloat(n1);
+	if(isfalso==true) {
+		//console.log("has sido cambiado");
+		//n1*=-1;
+		let aux=n1.toString();
+		if(aux.charAt(0)=="-") {
+			//no hacemos nada
+			console.log("no ha habido cambioopoooooooo")
+			
+		} else {
+			console.log("cambio isFalsooooooooooooooo");
+			n1=-n1;
+		}
+	}
 	console.log("funcion asignacion n1: "+n1);
 	isString=false;
-
+	isfalso=false;
 	//n2
 	console.log("Pos: "+pos);
 	n2=0;
 	
 	for(let i=pos+1;i<datos.length;i++) {
 		n2+=datos[i];
+		//false
+		if(datos[0]=="-") {
+			isfalso=true;
+		}
 		//flotantes
 		if(datos[i]==".") {
 			esFloat=true;
@@ -139,6 +170,7 @@ function asignacion() {
 	}
 	isString=false;
 	n2=parseFloat(n2);
+	
 	console.log("funcion asignacion n2: "+n2);
 	
 	//fin asignacion()
@@ -181,25 +213,65 @@ function operar() {
 		case "1/":
 		resultado=ulti(n2);
 		break;
+		case "^":
+		resultado=Math.pow(n1,n2);
+		break;
+		case "E":
+		resultado=n1*Math.pow(10,n2);
+		break;
+		case "tan":
+		resultado=Math.tan(n2);
+		break;
+		case "cos":
+		resultado=Math.cos(n2);
+		break;
+		case "sin":
+		resultado=Math.sin(n2);
+		break;
+		case "log":
+		resultado=Math.log(n2);
 		default:
 	}
 	if(isFloat(resultado)) {
 		resultado=resultado.toFixed(3);
+		resultado=eval(resultado);
 	}
-	console.log(resultado);
+	//resultado=eval(resultado);
+	console.log("Resultado:"+resultado);
+	console.log("Tipo Resultado:"+typeof(resultado));
 	textito.innerText=resultado;
 	datos=[];
 	let r=resultado;
-	datos.push(r);
+	if(isFloat(r)) {
+		//troceamos el numero
+		let longitud=divFloat(resultado);
+		let resultado2=resultado.toString();
+		for(let i=0;i<longitud;i++) {
+			if(resultado2.charAt(i)==".") {
+				datos.push(".");
+			} else if(resultado2.charAt(i)=="-") {
+				datos.push("-");
+			} else {
+				datos.push(parseInt(resultado2.charAt(i)));
+			}
+		}
+	} else {
+		datos.push(r);
+	}
 	return resultado;
 }
 
 //+/-
 function cambiarSigno() {
 	asignacion();
+	/*borradoParcial();
+	borradoParcial();*/
+	let aux=n1.toString();
+	for(let i=0;i<aux.length;i++) {
+		borradoParcial();
+	}
 	n1=-(n1);
-	borradoParcial();
-	borradoParcial();
+	
 	pantalla(n1);
 }
 
@@ -324,15 +396,47 @@ darky.addEventListener("click",()=> {
 		root.style.setProperty('--animacion', "#F4266A");
 	}
 });
+
+
 //cientifica
 var cientifica=document.getElementById("cientifica");
+var btnCientifica=document.getElementsByClassName("btnCientifica");
+
 let contadorCientifica=0;
+
 cientifica.addEventListener("click",()=> {
 	//alert(contadorCientifica);
 	contadorCientifica++;
-	
+	var root = document.documentElement;
+	if(contadorCientifica%2==1) {
+		 root.style.setProperty('--anchoCristal', "80vw");
+		 root.style.setProperty('--displayCientifico',"inline");
+		 root.style.setProperty('--anchoCalculadora',"50%");
+		 root.style.setProperty('--anchoBoton',"10%");
+		 root.style.setProperty('--anchoBotonMenor',"25%");
+		 root.style.setProperty('--leftAnimacion',"-32vw");
+	} else {
+		root.style.setProperty('--anchoCristal', "70vw");
+		root.style.setProperty('--displayCientifico',"none");
+		root.style.setProperty('--anchoCalculadora',"40%");
+		root.style.setProperty('--anchoBoton',"15%");
+		root.style.setProperty('--anchoBotonMenor',"40%");
+		root.style.setProperty('--leftAnimacion',"-22vw");
+	}
 });
 
+/*tangente
+function tangente() {
+	let numero=buscar();
+	let res=0;
+	res=Math.tan(numero);
+	res=res.toFixed(3);
+	textito.innerText="";
+    datos=[];
+    //res=parseInt(res);
+    pantalla(res);
+}
+*/
 //animacion
 window.onload=()=> {
 	var contadorAnimacion=0;

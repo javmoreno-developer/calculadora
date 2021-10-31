@@ -18,6 +18,7 @@
 						<button  class="blanco" id="1" onclick="memoria()"><h1>M</h1></button>
 						<button  id="2" class="menor" onclick="pantalla('<=')"><h1><=</h1></button>
 						<button  class="superior" id="3" onclick="borrarTotal()"><h1>C</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('log')"><h1>log</h1></button><!--Cientifica-->
 						<button  class="superior" id="4" onclick="borradoParcial()"><h1>CE</h1></button>
 					</div>
 					<div id="segunda" class="fila">
@@ -25,6 +26,7 @@
 						<button id="6" onclick="pantalla(7)"><h1>7</h1></button>
 						<button id="7" onclick="pantalla(8)"><h1>8</h1></button>
 						<button id="8" onclick="pantalla(9)"><h1>9</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('^')"><h1>POW</h1></button><!--Cientifica-->
 						<button class="azul" id="9" onclick="pantalla('/')"><h1>/</h1></button>
 					</div>
 					<div id="tercera" class="fila">
@@ -32,6 +34,7 @@
 						<button id="11" onclick="pantalla(4)"><h1>4</h1></button>
 						<button id="12" onclick="pantalla(5)"><h1>5</h1></button>
 						<button id="13" onclick="pantalla(6)"><h1>6</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('E')"><h1>EXP</h1></button><!--Cientifica-->
 						<button class="amarillo" id="14" onclick="pantalla('*')"><h1>*</h1></button>
 					</div>
 					<div id="cuarta" class="fila">
@@ -39,6 +42,7 @@
 						<button id="16" onclick="pantalla(1)"><h1>1</h1></button>
 						<button id="17" onclick="pantalla(2)"><h1>2</h1></button>
 						<button id="18" onclick="pantalla(3)"><h1>3</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('tan')"><h1>tan</h1></button><!--Cientifica-->
 						<button class="rojo" id="19" onclick="pantalla('-')"><h1>-</h1></button>
 					</div>
 					<div id="quinta" class="fila">
@@ -46,6 +50,7 @@
 						<button id="21" onclick="cambiarSigno()"><h1>+/-</h1></button>
 						<button id="22" onclick="pantalla(0)"><h1>0</h1></button>
 						<button id="23" onclick="pantalla('.')"><h1>.</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('cos')"><h1>cos</h1></button><!--Cientifica-->
 						<button class="morado" id="24" onclick="pantalla('+')"><h1>+</h1></button>
 					</div>
 					<div id="sexta" class="fila">
@@ -53,13 +58,25 @@
 						<button id="26" onclick="ulti()"><h1>1/x</h1></button>
 						<button id="27" onclick="raiz()"><h1>√</h1></button>
 						<button id="28" onclick="pantalla('%')"><h1>%</h1></button>
+						<button  class="btnCientifica" id="4" onclick="pantalla('sin')"><h1>sin</h1></button><!--Cientifica-->
 						<button class="resultado" id="29" onclick="operar()"><h1>=</h1></button>
+
 					</div>
+					<!--Cientifica-->
+					<!--<div id="septima" class="fila">
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>rad</h1></button>
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>POW</h1></button>
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>EXP</h1></button>
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>tan</h1></button>
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>cos</h1></button>
+						<button  class="btnCientifica" id="4" onclick="borradoParcial()"><h1>sin</h1></button>
+					</div>-->
+		
 				</div>
 			</section>
 
 			<input type="checkbox" id="darky" value="ok">
-			<button id="cientifica">Cientifica</button>
+			<button id="cientifica">Científica</button>
 		</section>
 		<div id="contenedor_carga">
 			<div id="carga"></div>
