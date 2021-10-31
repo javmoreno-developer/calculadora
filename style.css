@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+:root {
+  --container-color: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  --button: #ebe8e8;
+  --pulsado: black;
+  --calculadora: white;
+  --letra: black;
+  --cristal: rgba(0, 0, 0, 0.3);
+  --animacion: #F4266A;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-align: end;
+	font-size: 20px;
+	font-family: 'Zen Kurenaido', sans-serif;
+}
+#container {
+	height: 100vh;
+	width: 100vw;
+	background: var(--container-color);
+	background-size: 400% 400%;
+	animation: gradiente 15s ease infinite;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+@keyframes gradiente {
+	 0% {
+    	background-position: 0% 50%;
+  	 }
+	 50% {
+	    background-position: 100% 50%;
+	 }
+	 100% {
+	   background-position: 0% 50%;
+	 }
+}
+#cristal {
+	background: var(--cristal);
+	height: 80vh;
+	width: 70vw;
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+#calculadora {
+	background: var(--calculadora);
+	height: 90%;
+	width: 40%;
+	border-radius: 10%;
+}
+#pantalla {
+	height: 15%;
+	width: 90%;
+	display: flex;
+	align-items: center;
+    justify-content: flex-end;
+}
+#controles {
+	
+	height: 85%;
+	width: 100%;
+
+}
+#textito {
+	color: var(--letra);
+}
+.fila {
+	display: flex;
+	height: 10vh;
+	width: 100%;
+	justify-content: space-evenly;
+}
+button {
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	background: var(--button);
+}
+ button {
+	width: 15%;
+	border-radius: 50%;
+	height: 80%;
+}
+button:focus {
+	background: var(--pulsado);
+	color: white;
+}
+
+button h1 {
+	text-align: center;
+	font-size: 16px;
+	
+}
+#primera button:nth-child(2) {
+	width: 40%;
+}
+.azul {
+	background: #20B2AA;
+}
+.amarillo {
+	background: #FFA500;
+}
+.rojo {
+	background: #F08080;
+}
+.morado {
+	background: #7D93E0;
+}
+.resultado {
+	background: #9477AF;
+}
+.menor {
+	
+	border-radius: 0%;
+	
+}
+
+
+
+#darky {
+	position: absolute;
+	top: 80%;
+	left: 80%;
+	-webkit-transform: scale(2);
+}
+/*Media querys*/
+@media (max-width: 992px) { 
+	#calculadora {
+		width: 60%;
+	}
+ }
+
+ /*Animacion*/
+  #contenedor_carga {
+ 	background: transparent;
+ 	
+ 	position: fixed;
+ 	transition: all 1s ease;
+ 	z-index: 10000;
+ }
+ #carga {
+ 	border: 15px solid #ccc;
+ 	border-top-color:  var(--animacion);
+ 	border-top-style: groove;
+ 	height: 50px;
+ 	width: 50px;
+ 	border-radius: 100%;
+ 	position: absolute;
+ 	top: -60vh;
+ 	left: -22vw;
+ 	right: 0;
+ 	bottom: 0;
+ 	margin: auto;
+ 	animation: girar 1.5s linear infinite;
+ }
+ @keyframes girar {
+ 	from{transform: rotate(0deg);}
+ 	to {transform: rotate(360deg);}
+ }
+
+ /*Cientifica*/
+ #cientifica {
+	position: absolute;
+	top: 80%;
+	left: 20%;
+	width: 5vw;
+	height: 5vh;
+	border-radius: 0%;
+	text-align: center;
+	font-size: 16px;
+}
