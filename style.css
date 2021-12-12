@@ -181,11 +181,16 @@ button h1 {
   border-image-slice: 1;
   border-width: 5px;
   border-image-source: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
-  background: transparent;
+  background: white;
   font-family: 'Work Sans', sans-serif;
   font-weight: bold;
-  border: 5px solid darkgrey;
-  
+  border: 5px solid #F08080;
+
+}
+#cientifica:focus {
+	background: black;
+	color: white;
+	
 }
 .btnCientifica {
 	display: var(--displayCientifico);

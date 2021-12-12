@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+	<link rel="shortcut icon" href="c.ico" type="image/x-icon">
+	<title>Calculadora</title>
 </head>
 <body onkeypress="botones(event);">
 	<section id="container">
@@ -15,51 +16,55 @@
 		        </div>
 		        <div id="controles">
 					<div id="primera" class="fila">
-						<button  class="blanco" id="1" onclick="memoria()"><h1>M</h1></button>
-						<button  id="2" class="menor" onclick="pantalla('<=')"><h1><=</h1></button>
-						<button  class="superior" id="3" onclick="borrarTotal()"><h1>C</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('log')"><h1>log</h1></button><!--Cientifica-->
-						<button  class="superior" id="4" onclick="borradoParcial()"><h1>CE</h1></button>
+						<button  name="memoria" class="blanco" ><h1>M</h1></button>
+						<button  name="pantalla" class="menor" ><h1><=</h1></button>
+						<button  name="borrarTotal" class="superior" id="3" ><h1>C</h1></button>
+						<button  name="log" class="btnCientifica" id="4"><h1>ln</h1></button>
+						<!--Cientifica-->
+						<button  name="borradoParcial" class="superior" id="4" ><h1>CE</h1></button>
 					</div>
 					<div id="segunda" class="fila">
-						<button class="blanco" id="5" class="verde" onclick="random()"><h1>Rnd</h1></button>
-						<button id="6" onclick="pantalla(7)"><h1>7</h1></button>
-						<button id="7" onclick="pantalla(8)"><h1>8</h1></button>
-						<button id="8" onclick="pantalla(9)"><h1>9</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('^')"><h1>POW</h1></button><!--Cientifica-->
-						<button class="azul" id="9" onclick="pantalla('/')"><h1>/</h1></button>
+						<button name="random" class="blanco" id="5" class="verde" ><h1>Rnd</h1></button>
+						<button name="pantalla" id="6" ><h1>7</h1></button>
+						<button name="pantalla" id="7" ><h1>8</h1></button>
+						<button name="pantalla" id="8" ><h1>9</h1></button>
+						<button name="pantalla" class="btnCientifica" id="4" ><h1>POW</h1></button>
+						<!--Cientifica-->
+						<button name="pantalla" class="azul" id="9" ><h1>/</h1></button>
 					</div>
 					<div id="tercera" class="fila">
-						<button class="blanco" id="10" onclick="e()"><h1>e</h1></button>
-						<button id="11" onclick="pantalla(4)"><h1>4</h1></button>
-						<button id="12" onclick="pantalla(5)"><h1>5</h1></button>
-						<button id="13" onclick="pantalla(6)"><h1>6</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('E')"><h1>EXP</h1></button><!--Cientifica-->
-						<button class="amarillo" id="14" onclick="pantalla('*')"><h1>*</h1></button>
+						<button name="e" class="blanco" id="10"><h1>e</h1></button>
+						<button name="pantalla" id="11" ><h1>4</h1></button>
+						<button name="pantalla" id="12"><h1>5</h1></button>
+						<button name="pantalla" id="13" ><h1>6</h1></button>
+						<button  name="pantalla" class="btnCientifica" id="4" ><h1>EXP</h1></button><!--Cientifica-->
+						<button name="pantalla" class="amarillo" id="14" ><h1>*</h1></button>
 					</div>
 					<div id="cuarta" class="fila">
-						<button class="blanco" id="15" onclick="pi()"><h1>n</h1></button>
-						<button id="16" onclick="pantalla(1)"><h1>1</h1></button>
-						<button id="17" onclick="pantalla(2)"><h1>2</h1></button>
-						<button id="18" onclick="pantalla(3)"><h1>3</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('tan')"><h1>tan</h1></button><!--Cientifica-->
-						<button class="rojo" id="19" onclick="pantalla('-')"><h1>-</h1></button>
+						<button name="pi" class="blanco" id="15" ><h1>n</h1></button>
+						<button name="pantalla" id="16" ><h1>1</h1></button>
+						<button name="pantalla" id="17" ><h1>2</h1></button>
+						<button name="pantalla" id="18" ><h1>3</h1></button>
+						<button name="tangente" class="btnCientifica" id="4"><h1>tan</h1></button><!--Cientifica-->
+						<button name="pantalla" class="rojo" id="19" ><h1>-</h1></button>
 					</div>
 					<div id="quinta" class="fila">
-						<button class="blanco" id="20" onclick="factorial()"><h1>!</h1></button>
-						<button id="21" onclick="cambiarSigno()"><h1>+/-</h1></button>
-						<button id="22" onclick="pantalla(0)"><h1>0</h1></button>
-						<button id="23" onclick="pantalla('.')"><h1>.</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('cos')"><h1>cos</h1></button><!--Cientifica-->
-						<button class="morado" id="24" onclick="pantalla('+')"><h1>+</h1></button>
+						<button name="factorial" class="blanco" id="20" ><h1>!</h1></button>
+						<button name="cambiarSigno" id="21" ><h1>+/-</h1></button>
+						<button name="pantalla" id="22" ><h1>0</h1></button>
+						<button name="pantalla" id="23" ><h1>.</h1></button>
+						<button name="cos" class="btnCientifica" id="4" ><h1>cos</h1></button>
+						<!--Cientifica-->
+						<button name="pantalla" class="morado" id="24" ><h1>+</h1></button>
 					</div>
 					<div id="sexta" class="fila">
-						<button class="blanco" id="25" onclick="pantalla('mod')"><h1>mod</h1></button>
-						<button id="26" onclick="ulti()"><h1>1/x</h1></button>
-						<button id="27" onclick="raiz()"><h1>√</h1></button>
-						<button id="28" onclick="pantalla('%')"><h1>%</h1></button>
-						<button  class="btnCientifica" id="4" onclick="pantalla('sin')"><h1>sin</h1></button><!--Cientifica-->
-						<button class="resultado" id="29" onclick="operar()"><h1>=</h1></button>
+						<button name="pantalla" class="blanco" id="25" ><h1>mod</h1></button>
+						<button name="ulti" id="26" ><h1>1/x</h1></button>
+						<button name="raiz" id="27" ><h1>√</h1></button>
+						<button name="pantalla" id="28" ><h1>%</h1></button>
+						<button  name="sin" class="btnCientifica" id="4" ><h1>sin</h1></button>
+						<!--Cientifica-->
+						<button name="operar" class="resultado" id="29" ><h1>=</h1></button>
 
 					</div>
 					<!--Cientifica-->
@@ -83,5 +88,6 @@
 		</div>
 	</section>	
 	<script src="script.js"></script>
+	<script src="teclado.js"></script>
 </body>
 </html>
