@@ -13,9 +13,9 @@ El algoritmo que he seguido es el siguiente:en primer lugar tengo una estructura
 
 ### Teclado
 Los comandos con el teclado son los siguientes:
-+ -> +
-- -> -
-* -> *
+1.+ -> +
+2.- -> -
+3.* -> *
 / -> /
 0,1,2... -> 0,1,2...
 = -> tecla enter
